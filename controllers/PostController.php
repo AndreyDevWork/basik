@@ -12,12 +12,8 @@ class PostController extends Controller
     {
         $model = new PostForm();
         if(Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            $model->message = json_encode($model->message);
             $model->save();
-            if($model->save()) {
-                Yii::$app->session->setFlash('success', 'form send complete');
-            } else {
-                Yii::$app->session->setFlash('error', 'form DID NON send');
-            }
         }
         return $this->render('index', compact('model'));
     }

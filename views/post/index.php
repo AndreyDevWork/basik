@@ -38,7 +38,7 @@ $data = [
     <?= $form->field($model, 'message')->widget(Select2::classname(), [
         'data' => $data,
         'language' => 'de',
-        'options' => ['placeholder' => 'Select a state ...'],
+        'options' => ['multiple' => true, 'placeholder' => 'Select a state ...'],
         'pluginOptions' => [
             'allowClear' => true
         ],

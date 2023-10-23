@@ -22,9 +22,8 @@ class PostForm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email'], 'required'],
+            [['name', 'email', 'message'], 'required'],
             ['email', 'email'],
-            [['message'], 'string'],
         ];
     }
 
