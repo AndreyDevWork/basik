@@ -12,7 +12,7 @@ class PostController extends Controller
     {
         $model = new PostForm();
         if(Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
-            $model->message = json_encode($model->message);
+            $model->select = json_encode($model->select);
             $model->save();
         }
         return $this->render('index', compact('model'));

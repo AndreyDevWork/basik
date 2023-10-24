@@ -26,16 +26,15 @@ $data = [
 <?php Pjax::begin(['id' => 'post']); ?>
     <?php $form = ActiveForm::begin([
         'options' => [
-            'class' => 'form-horizontal',
             'id' => 'login-form',
             'data-pjax' => true,
         ]
     ]); ?>
 
-    <?= $form->field($model, 'name')->textInput()->label('Имя') ?>
+    <?= $form->field($model, 'name')->textInput() ?>
     <?= $form->field($model, 'email')->textInput() ?>
-<!--    --><?php //= $form->field($model, 'message')->textarea()->label('Сообщение') ?>
-    <?= $form->field($model, 'message')->widget(Select2::classname(), [
+    <?= $form->field($model, 'message')->textarea() ?>
+    <?= $form->field($model, 'select')->widget(Select2::classname(), [
         'data' => $data,
         'language' => 'de',
         'options' => ['multiple' => true, 'placeholder' => 'Select a state ...'],
