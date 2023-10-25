@@ -23,10 +23,10 @@ $data = [
 
 <h1>POST</h1>
 
-<?php Pjax::begin(['id' => 'post']); ?>
+<?php //Pjax::begin(['id' => 'post']); ?>
     <?php $form = ActiveForm::begin([
         'options' => [
-            'id' => 'login-form',
+            'id' => 'postForm',
             'data-pjax' => true,
         ]
     ]); ?>
@@ -44,7 +44,7 @@ $data = [
     ]);?>
     <?= Html::submitButton('Отправить', ['class' => 'btn btn-success']) ?>
     <?php ActiveForm::end(); ?>
-<?php Pjax::end(); ?>
+<?php //Pjax::end(); ?>
 
 
 
