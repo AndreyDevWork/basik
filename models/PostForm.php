@@ -46,4 +46,9 @@ class PostForm extends \yii\db\ActiveRecord
             $this->addError($attribute, 'Только USA и RUSSIA');
         }
     }
+
+    public function findAllPosts()
+    {
+        return self::find();
+    }
 }

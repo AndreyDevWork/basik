@@ -1,10 +1,12 @@
 <?php
 /** @var app\models\PostForm $model */
 
+
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use kartik\select2\Select2;
+use yii\widgets\ListView;
 
 
 
@@ -19,7 +21,14 @@ $data = [
     "cyan" => "cyan",
     "teal" => "teal"
 ];
+
+echo ListView::widget([
+        'dataProvider' => $dataProvider,
+        'itemView' => '_post',
+]);
+
 ?>
+
 
 <h1>POST</h1>
 
