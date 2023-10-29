@@ -1,5 +1,7 @@
 <?php
+/** @var yii\web\View $this */
 /** @var app\models\PostForm $model */
+/** @var yii\data\ActiveDataProvider $dataProvider */
 
 
 use yii\widgets\ActiveForm;
@@ -7,7 +9,7 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 use kartik\select2\Select2;
 use yii\widgets\ListView;
-
+use yii\bootstrap5\Tabs;
 
 
 $data = [
@@ -31,7 +33,8 @@ echo ListView::widget([
 
 
 <h1>POST</h1>
-
+<p>Model - используем когда не требуется работа с БД</p>
+<p>ActiveRecord - используем когда требуется работа с БД</p>
 <?php //Pjax::begin(['id' => 'post']); ?>
     <?php $form = ActiveForm::begin([
         'options' => [
@@ -60,5 +63,21 @@ echo ListView::widget([
 
 
 
+<?php
+echo Tabs::widget([
+    'items' => [
+        [
+            'label' => 'One',
+            'content' => 'Anim pariatur cliche...',
+            'active' => true
+        ],
+        [
+            'label' => 'Two',
+            'content' => 'Anim pariaввввtur cliche...',
+            'options' => ['id' => 'myveryownID'],
+        ],
 
+
+    ],
+]); ?>
 

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "post".
@@ -13,7 +14,7 @@ use Yii;
  * @property string $message
  * @property string $select
  */
-class PostForm extends \yii\db\ActiveRecord
+class PostForm extends ActiveRecord
 {
     public static function tableName()
     {
@@ -51,4 +52,6 @@ class PostForm extends \yii\db\ActiveRecord
     {
         return self::find();
     }
+
+
 }
